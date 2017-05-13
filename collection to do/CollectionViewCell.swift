@@ -11,17 +11,14 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var titleLabel: UILabel!
-    //@IBOutlet var singlerecognizer: UITapGestureRecognizer!
+    @IBOutlet var kesuButton: UIButton!
+    //@IBOutlet var dateLabel: UILabel!
+    //@IBOutlet var myImageView: UIImageView! //タップの関連付け
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        //タップ
-//        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self,action: #selector(ListCollectionViewController.tap(_:)))
-//        
-//        //タップ
-//        tapGesture.delegate = self as? UIGestureRecognizerDelegate;
-        
     }
+    
+    
 
 }

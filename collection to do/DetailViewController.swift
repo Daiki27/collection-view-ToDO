@@ -13,7 +13,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
-    
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
     var todo: ToDo!
@@ -31,13 +30,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func save() {
-        
-        if let title = titleTextField.text, let detailDescription = descriptionTextField.text {
+        //duedateは常にデータがあるからif let 使わない。
+        if let title = titleTextField.text, let detailDescription = descriptionTextField.text, let dueDate: Date = dueDatePicker.date  {
             
             let todo = ToDo()
             todo.id = ToDo.lastId()
             todo.title = title
             todo.detailDescription = detailDescription
+            todo.dueDate = dueDate as NSDate
             
             let realm = try! Realm()
             try! realm.write {

@@ -18,25 +18,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="154" height="155"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="風船.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0VV-6w-sRD">
+                        <rect key="frame" x="15" y="29" width="124" height="120"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <gestureRecognizers/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAL-Xd-gjK">
-                        <rect key="frame" x="0.0" y="6" width="154" height="21"/>
+                        <rect key="frame" x="0.0" y="0.0" width="154" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="風船.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0VV-6w-sRD">
-                        <rect key="frame" x="15" y="29" width="124" height="120"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4U-ii-gwC">
+                        <rect key="frame" x="102" y="125" width="46" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                        <state key="normal" title="kesu"/>
+                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <size key="customSize" width="154" height="155"/>
             <connections>
+                <outlet property="kesuButton" destination="v4U-ii-gwC" id="khO-fO-XFv"/>
                 <outlet property="titleLabel" destination="qAL-Xd-gjK" id="iQn-u5-cQn"/>
             </connections>
-            <point key="canvasLocation" x="62" y="-19.5"/>
+            <point key="canvasLocation" x="27" y="-91.5"/>
         </collectionViewCell>
     </objects>
     <resources>

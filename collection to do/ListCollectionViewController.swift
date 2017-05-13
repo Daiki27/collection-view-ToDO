@@ -32,15 +32,15 @@ class ListCollectionViewController: UICollectionViewController  {
     //データを返すメソッド。セルの中身の表示の仕方の設定。
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        as! CollectionViewCell //セルの再利用
-        
+        let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell //セルの再利用
         cell.titleLabel.text = todoes[indexPath.row].title
-        
         return cell
-        
     }
-
+    
+    @IBAction func buttonDidTap(sender: AnyObject) {
+        print("delete")
+    }
+    
     //＋ボタンを押した時のメソッド
     @IBAction func add() {
         self.performSegue(withIdentifier: "toDetail", sender: nil)
@@ -57,11 +57,6 @@ class ListCollectionViewController: UICollectionViewController  {
        collectionView?.register(nib, forCellWithReuseIdentifier: "Cell")
         
     }
-    
-    //タップ
-//    func tap(_ sender: UITapGestureRecognizer){
-//        
-//    }
     
     //警告を受け取ったときに呼ばれるメソッド
     override func didReceiveMemoryWarning() {
@@ -86,18 +81,34 @@ class ListCollectionViewController: UICollectionViewController  {
         self.performSegue(withIdentifier: "toDetail", sender: todoes[indexPath.row])
     }
     
+    //タップした時にラベルに保存されたデータを表示する。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
             if segue.identifier == "toDetail" {
-    
                 let controller = segue.destination as! DetailViewController
                 if let todo = sender as? ToDo {
                     controller.todo = todo
                 }
             }
-        }
-
-
+    }
+    
+    @IBAction func modoru(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+//    @IBAction func kesu(_ sender: UIButton) {
+//        
+//        // IndexPathを取得 (押されたボタンが乗っているCellから)
+//        let cell = sender.superview?.superview as? UICollectionViewCell
+//        _ = self.collectionView?.indexPath( for: cell! )
+//        
+//        // Cellの削除処理
+//        self.tableView.deleteItemsAtIndexPaths(todoes[indexPath.row], withRowAnimation: UICollectionViewItemAnimation.Fade)
+//    }
+    
+    
+    
     //セルの個数の指定
 //      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return 0
